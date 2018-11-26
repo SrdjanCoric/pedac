@@ -21,7 +21,9 @@ Understanding the problem consists usually of three steps.
 2. Check the test cases if they are given
 3. If something is still unclear ask the interviewer (if in the interview setting) to clarify things for you
 
-Problem:
+```ruby
+=begin
+PROBLEM:
 
 Given a string, write a method change_me which returns the same string but with all the words in it that are palindromes upcased.
 
@@ -29,6 +31,8 @@ change_me("We will meet at noon") == "We will meet at NOON"
 change_me("No palindromes here") = "No palindromes here"
 change_me("") == ""
 change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
+=end
+```
 
 Let's follow the steps above :
 
@@ -61,6 +65,10 @@ Deciding what data structure to use is usually easy for students, but figuring o
 
 Let's consider another problem. Try to go through the "understand the problem" part of this problem yourself and finally write input, output and rules for it. We will provide you with solution below. Later, we will tackle data structure and algorithm part.
 
+```ruby
+=begin
+PROBLEM:
+
 Given a string, write a method `palindrome_substrings` which returns all the substrings from a given string which are palindromes. Consider palindromes case insensitive.
 
 Test cases:
@@ -69,6 +77,8 @@ palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
 palindrome_substrings("abcdDCBA") == ["abcdDCBA", "bcdDCB", "cdDC", "dD"]
 palindrome_substrings("palindrome") == []
 palindrome_substrings("") == []
+=end
+```
 
 ```ruby
 =begin
