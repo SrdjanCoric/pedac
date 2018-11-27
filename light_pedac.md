@@ -46,14 +46,20 @@ After reading the problem some things might still be unclear.
 
 **1. What is a palindrome?**
    You might ask the interviewer to tell you what a palindrome is,and he/she would tell you that it is a word that reads the same forwards and backwards.
+
 **2. Should other words in the string remain the same if they are upcased currently?**
    Here, you might check the test cases and see that in the fourth test case word LOVE is written upcased and it remained upcased in the solution as well.
+
 **3. How to treat empty strings as inputs?**
+
    This question can also be clarified by checking the test cases (test case number 3).
 **4. Will the inputs be only strings?**
+
    Test cases do not show inputs that are not strings so you might check with the interviewer whether the input can be something other than a string.
 **5. Should we consider letter cases when deciding whether the word is a palindrome or not?**
+
    Again, test cases do not show examples of that, but interviewer might tell you in this case that the palindrome words should be case sensitive.
+   
 **6. Do I need to return the same string object or just the same sequence of characters?**
    This question is one of the most important ones. Usually, while solving problems, students make certain assumptions. One of the assumption might be that they need to return the same string object, to which the answer is no, but, most of the time, student starts solving the problem without checking whether the assumption was correct or not. For this reason, student might end up losing 10-15 minutes struggling and trying to solve the wrong problem, until finally, he/she asks the interviewer whether the the same string object needs to be returned or not. **The right approach is to check every assumption that you make either by looking at the test cases, or by asking the interviewer.**
 
