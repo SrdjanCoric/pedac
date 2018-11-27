@@ -18,7 +18,7 @@ Note that word "complex" is bolded. The reason for this is that simple problems,
 
 In this guide we will mostly be focused on "understand the problem" and "data structure/algorithm" parts of the PEDAC process. The reason for this is that on the first interview assessment you will be given test cases and as far as coding part is concerned, we have noticed that most students have sufficient knowledge of Ruby syntax and methods to solve even the hardest problems, and what they lack is problem understanding and/or figuring out the right algorithm for the problem.
 
-P - [Understand the] **P**roblem
+#### P - [Understand the] **P**roblem
 
 Understanding the problem consists usually of three steps.
 
@@ -72,7 +72,7 @@ rules: every palindrome in the string needs to be upcased. (Reminder: palindrome
 =end
 ```
 
-**D**ata Structure / **A**lgorithm
+#### **D**ata Structure / **A**lgorithm
 
 Data Structure influences your algorithm and for that reason these two steps are often paired together.
 
