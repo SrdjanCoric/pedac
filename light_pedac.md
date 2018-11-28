@@ -89,7 +89,7 @@ Given a string, write a method `palindrome_substrings` which returns all the sub
 Test cases:
 
 palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
-palindrome_substrings("abcdDCBA") == ["abcdDCBA", "bcdDCB", "cdDC", "dD"]
+palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
 palindrome_substrings("palindrome") == []
 palindrome_substrings("") == []
 =end
@@ -131,9 +131,9 @@ Finding whether the word is a palindrome or not is not that difficult for most s
 
 So, what usually happens is that the student starts writing a code following the algorithm above, and then realizes that returning all the substrings won't be such an easy task. The right approach now would be to return to the algorithm and try to come up with a way to find all the substrings from a given string. The student could also create a new method called `substrings` which would return what is needed. But, in practice, since the time is limited, the student usually tries to hack&slash his way to the solution, which inevitably leads to either spending much more time solving the problem or not solving the problem at all.
 
-Let's now follow, the right approach, return to the algorithm and try to find one for `substrings` method.
+Let's now follow, the right approach, return to the algorithm and try to find one for the `substrings` method.
 
-To find the right algorithm for the `substrings` method, you should try to simplify the problem. Take a short word like `halo` and write all the substrings which are greater than 1 letter in length for it(we are not considering 1 letter substrings as for the word to be palindrome it needs to be at least 2 characters long). Those would be `["ha", "hal", "halo", "al", "alo", "lo"]`. Do you see any pattern here?
+To find the right algorithm for the `substrings` method, you should try to simplify the problem. Take a short word like `halo` and write all the substrings which are greater than 1 letter in length for it(we are not considering 1 letter substrings as for the word to be a palindrome it needs to be at least 2 characters long). Those would be `["ha", "hal", "halo", "al", "alo", "lo"]`. Do you see any pattern here?
 
 The starting letter of each substring is the same, while we loop through the ending letter, which always starts 1 character after the starting letter and goes all the way to the end of the string.
 
