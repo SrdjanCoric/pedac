@@ -117,7 +117,7 @@ Now, we come to the algorithm part. Look at the algorithm written below.
 =begin
 Algorithm:
      - initialize new result variable and assign an empty array to it
-     - create an array of all the substrings, at least 2 characters long, for a given string and assign it to substring_arr variable
+     - create an array of all the substrings, at least 2 characters long, for a given string and assign it to the substring_arr variable
      - loop through the substring_arr array and if the word is a palindrome append it to the result array
      - return the result array
 =end
