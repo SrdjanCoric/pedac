@@ -117,7 +117,7 @@ Now, we come to the algorithm part. Look at the algorithm written below.
 =begin
 Algorithm:
      - initialize new result variable and assign an empty array to it
-     - find all the substrings for a given string and assign it to substring_arr variable
+     - find all the substrings, at least 2 characters long, for a given string and assign it to substring_arr variable
      - loop through the substring_arr array and if the word is a palindrome append it to the result array
      - return the result array
 =end
@@ -206,7 +206,7 @@ output: an array of substrings
 rules: palindrome words should be case sensitive, meaning "abBA" is not a palindrome
 Algorithm:
      - initialize new result variable and assign an empty array to it
-     - find all the substrings for a given string and assign it to the substring_arr variable (for that we would need another method, called substrings which would return all the substrings from a given array)
+     - find all the substrings, at least 2 characters long, for a given string and assign it to the substring_arr variable (for that we would need another method, called substrings which would return all the substrings from a given array)
      - loop through the substring_arr array and if the word is a palindrome(we could also create a method `is_palindrome?` to check whether the string is a palindrome or not) shovel it into the result variable
      - return result variable
 
