@@ -29,17 +29,15 @@ Understanding the problem has three steps.
 Let's walk through this process for the problem given below:
 
 ```ruby
-=begin
-PROBLEM:
+# PROBLEM:
 
-Given a string, write a method change_me which returns the same
-string but with all the words in it that are palindromes uppercased.
+# Given a string, write a method change_me which returns the same
+# string but with all the words in it that are palindromes uppercased.
 
-change_me("We will meet at noon") == "We will meet at NOON"
-change_me("No palindromes here") = "No palindromes here"
-change_me("") == ""
-change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
-=end
+# change_me("We will meet at noon") == "We will meet at NOON"
+# change_me("No palindromes here") = "No palindromes here"
+# change_me("") == ""
+# change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
 ```
 
 After reading this problem, some items may need clarification:
@@ -62,26 +60,21 @@ After reading this problem, some items may need clarification:
 6.  **Do I need to return the same string object or an entirely new string?**
     This question is one of the most important and most overlooked that you can ask. Typically, while solving problems, students make certain assumptions. One assumption might be that they need to return the same string object. Students often start solving the problem without checking whether the assumption is correct. For this reason, the student might end up losing 10-15 minutes struggling with the wrong problem. In this problem, you should return an entirely new string. **Always verify your assumptions either by looking at the test cases or by asking the interviewer.**
 
-To conclude this part of the PEDAC process, you need to write down what the inputs and outputs for the problem are. You should also describe the rules that you must follow.
+To conclude this part of the PEDAC process, you need to write down what the inputs and outputs for the problem are. You should also describe the rules that you must follow. The rules should encapsulate all the explicit and implicit requirements in the problem. So, you should identify what the explicit requirements are, write them down, and then repeat the process for the implicit requirements:
 
 ```ruby
-=begin
-input: string
-output: string (not the same object)
-rules: every palindrome in the string must be converted to
-       uppercase. (Reminder: a palindrome is a word that reads
-       the same forwards and backward). Palindromes are case
-       sensitive ("Dad" is not a palindrome, but "dad" is.)
-=end
+# input: string
+# output: string (not the same object)
+# rules: 
+#      Explicit requirements: 
+#        - every palindrome in the string must be converted to
+#          uppercase. (Reminder: a palindrome is a word that reads
+#          the same forwards and backward). 
+#        - Palindromes are case sensitive ("Dad" is not a palindrome, but "dad" is.)
+
+#      Implicit requirements:
+#        - the returned string doesn't have to be the same string object.
 ```
-
----
-
-**NOTE**
-
->I think we need to expand on what the "rules" are. It isn't entirely clear what they are here.
-
----
 
 ### **D**ata Structure / **A**lgorithm
 
@@ -90,35 +83,33 @@ Data structures influence your algorithm, and for that reason, these two steps a
 Let's consider another problem. Try to work through the "understand the problem" part of this problem on your own, and write the input, output, and rules for it. We'll provide a solution below. Later, we'll tackle the data structure and algorithm.
 
 ```ruby
-=begin
-PROBLEM:
+# PROBLEM:
 
-Given a string, write a method `palindrome_substrings` which returns
-all the substrings from a given string which are palindromes. Consider
-palindrome words case sensitive.
+# Given a string, write a method `palindrome_substrings` which returns
+# all the substrings from a given string which are palindromes. Consider
+# palindrome words case sensitive.
 
-Test cases:
+# Test cases:
 
-palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
-palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
-palindrome_substrings("palindrome") == []
-palindrome_substrings("") == []
-=end
+# palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+# palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+# palindrome_substrings("palindrome") == []
+# palindrome_substrings("") == []
 ```
 
 ```ruby
-=begin
-Some questions you might have?
-1. What is a substring?
-2. What is a palindrome?
-3. Will inputs always be strings?
-4. What does it mean to treat palindrome words case-sensitively?
+# Some questions you might have?
+# 1. What is a substring?
+# 2. What is a palindrome?
+# 3. Will inputs always be strings?
+# 4. What does it mean to treat palindrome words case-sensitively?
 
-input: string
-output: an array of substrings
-rules: palindrome words should be case sensitive, meaning "abBA"
-       is not a palindrome.
-=end
+# input: string
+# output: an array of substrings
+# rules: 
+#      Explicit requirements: 
+#        - palindrome words should be case sensitive, meaning "abBA"
+#          is not a palindrome.
 ```
 
 What data structure could we use to solve this problem? The obvious choice seems to be an array since that's the desired output.
@@ -126,16 +117,14 @@ What data structure could we use to solve this problem? The obvious choice seems
 Now, we come to the algorithm part. Look at the algorithm written below.
 
 ```ruby
-=begin
-Algorithm:
-  - initialize a result variable to an empty array
-  - create an array named substring_arr that contains all of the
-    substrings of the input string that are at least 2 characters long.
-  - loop through the words in the substring_arr array.
-    - if the word is a palindrome, append it to the result
-      array
-  - return the result array
-=end
+# Algorithm:
+#  - initialize a result variable to an empty array
+#  - create an array named substring_arr that contains all of the
+#    substrings of the input string that are at least 2 characters long.
+#  - loop through the words in the substring_arr array.
+#  - if the word is a palindrome, append it to the result
+#    array
+#  - return the result array
 ```
 
 Does this algorithm look complete to you?
@@ -157,25 +146,23 @@ Continuing in this vein, we now find all of the substrings that begin with the s
 One way to solve the problem above with code is to use two loops: an outer loop that tracks the index of the first letter of each substring, and an inner loop that tracks the index of the last letter of each substring. Let's try to write that:
 
 ```ruby
-=begin
-- create an empty array called `result` that will contain all
-  the required substrings
-- initialize variable start_substring_idx and assign 0 to it.
-- initialize variable end_substring_idx and assign value of
-  first_letter_idx + 1 to it.
-- Enter loop which will break when start_substring_idx is equal
-    to str.size - 1
-  - Within that loop enter another loop that will break if
-    end_substring_idx is equal to str.size
-    - append to the result array part of the string from
-      start_substring_idx to end_substring_idx
-    - increment `end_substring_idx` by 1.
-  - end the inner loop
-  - increment `start_substring_idx` by 1.
-  - reassign `end_substring_idx` to `start_substring_idx += 1`
-- end outer loop
-- return `result` array
-=end
+# - create an empty array called `result` that will contain all
+#   the required substrings
+# - initialize variable start_substring_idx and assign 0 to it.
+# - initialize variable end_substring_idx and assign value of
+#   first_letter_idx + 1 to it.
+# - Enter loop which will break when start_substring_idx is equal
+#     to str.size - 1
+#   - Within that loop enter another loop that will break if
+#     end_substring_idx is equal to str.size
+#     - append to the result array part of the string from
+#       start_substring_idx to end_substring_idx
+#     - increment `end_substring_idx` by 1.
+#   - end the inner loop
+#   - increment `start_substring_idx` by 1.
+#   - reassign `end_substring_idx` to `start_substring_idx += 1`
+# - end outer loop
+# - return `result` array
 ```
 
 The code for this might look like this :
@@ -202,11 +189,9 @@ end
 Checking whether the string is a palindrome is easy enough, but we could also write the method for it as well and include it in the algorithm.
 
 ```ruby
-=begin
-- Inside the `is_palindrome?` method, check whether the string
-  value is equal to its reversed value. You can use the
-  `String#reverse` method.
-=end
+# - Inside the `is_palindrome?` method, check whether the string
+#   value is equal to its reversed value. You can use the
+#   `String#reverse` method.
 ```
 
 ```ruby
@@ -218,48 +203,46 @@ end
 Here's the complete **pseudocode** for this problem:
 
 ```ruby
-=begin
-input: a string
-output: an array of substrings
-rules: palindrome words should be case sensitive, meaning "abBA"
-       is not a palindrome
+# input: a string
+# output: an array of substrings
+# rules: palindrome words should be case sensitive, meaning "abBA"
+#        is not a palindrome
 
-Algorithm:
-  substrings method
-  =================
-  - create an empty array called `result` which will contain all
-    the required substrings
-  - initialize variable start_substring_idx and assign 0 to it.
-  - initialize variable end_substring_idx and assign value of
-    first_letter_idx + 1 to it.
-  - Enter loop which will break when start_substring_idx is equal
-      to str.size - 1
-    - Within that loop enter another loop which will break if
-      end_substring_idx is equal to str.size
-      - append to the result array part of the string from
-        start_substring_idx to end_substring_idx
-      - increment `end_substring_idx` by 1.
-    - end the inner loop
-    - increment `start_substring_idx` by 1.
-    - reassign `end_substring_idx` to `start_substring_idx += 1`
-  - end outer loop
-  - return `result` array
+# Algorithm:
+#  substrings method
+#  =================
+#  - create an empty array called `result` which will contain all
+#    the required substrings
+#  - initialize variable start_substring_idx and assign 0 to it.
+#  - initialize variable end_substring_idx and assign value of
+#    first_letter_idx + 1 to it.
+#  - Enter loop which will break when start_substring_idx is equal
+#      to str.size - 1
+#    - Within that loop enter another loop which will break if
+#      end_substring_idx is equal to str.size
+#      - append to the result array part of the string from
+#        start_substring_idx to end_substring_idx
+#      - increment `end_substring_idx` by 1.
+#    - end the inner loop
+#    - increment `start_substring_idx` by 1.
+#    - reassign `end_substring_idx` to `start_substring_idx += 1`
+#  - end outer loop
+#  - return `result` array
 
-  is_palindrome? method
-  =====================
-  - check whether the string value is equal to its reversed
-    value. You can use the `String#reverse` method.
+#  is_palindrome? method
+#  =====================
+#  - check whether the string value is equal to its reversed
+#    value. You can use the `String#reverse` method.
 
-  palindrome_substrings method
-  ============================
-  - initialize a result variable to an empty array
-  - create an array named substring_arr that contains all of the
-    substrings of the input string that are at least 2 characters long.
-  - loop through the words in the substring_arr array.
-    - if the word is a palindrome, append it to the result
-      array
-  - return the result array
-=end
+#  palindrome_substrings method
+#  ============================
+#  - initialize a result variable to an empty array
+#  - create an array named substring_arr that contains all of the
+#    substrings of the input string that are at least 2 characters long.
+#  - loop through the words in the substring_arr array.
+#    - if the word is a palindrome, append it to the result
+#      array
+#  - return the result array
 ```
 
 The code for this with all the helper methods :
