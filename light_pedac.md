@@ -73,7 +73,7 @@ To conclude this part of the PEDAC process, you need to write down what the inpu
 #        - Palindromes are case sensitive ("Dad" is not a palindrome, but "dad" is.)
 
 #      Implicit requirements:
-#        - the returned string doesn't have to be the same string object.
+#        - the returned string shouldn't be the same string object.
 ```
 
 ### **D**ata Structure / **A**lgorithm
