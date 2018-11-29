@@ -107,7 +107,8 @@ Let's consider another problem. Try to work through the "understand the problem"
 # input: string
 # output: an array of substrings
 # rules: 
-#      Explicit requirements: 
+#      Explicit requirements:
+#        - return only substrings which are palindromes.
 #        - palindrome words should be case sensitive, meaning "abBA"
 #          is not a palindrome.
 ```
